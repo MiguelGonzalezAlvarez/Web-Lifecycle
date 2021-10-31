@@ -41,18 +41,18 @@ export class Page1Component implements OnInit, OnChanges, DoCheck, AfterContentI
   }
 
   ngOnDestroy(): void {
-    console.log('ngOnDestroy');
     this.timerSubscription.unsubscribe();
     console.log('timer limpiado');
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit');
     this.timerSubscription = interval(1000).subscribe(i => {
       this.segundos = i;
     })
   }
 
-  guardar() {}
+  guardar() {
+    console.log('guardar');
+  }
 
 }
